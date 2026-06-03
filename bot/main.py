@@ -1,8 +1,10 @@
 import discord
 from discord import app_commands
 import os
+from datetime import datetime, timezone
 from keep_alive import keep_alive
 from config import get_log_channel_id, set_log_channel_id
+from history import append_entry, get_entries
 
 intents = discord.Intents.default()
 intents.presences = True
@@ -29,6 +31,35 @@ async def on_ready():
         print(f"Logging presence changes to channel ID: {log_channel_id}")
     else:
         print("WARNING: No log channel set. Use /setstatus in your server to configure one.")
+
+
+@tree.command(name="presencelog", description="Show recent presence changes for a member.")
+@app_commands.describe(member="The member to look up", entries="Number of entries to show (default 10, max 25)")
+@app_commands.default_permissions(administrator=True)
+async def presencelog(interaction: discord.Interaction, member: discord.Member, entries: int = 10):
+    entries = max(1, min(entries, 25))
+    history = get_entries(member.id, limit=entries)
+
+    embed = discord.Embed(
+        title=f"Presence History — {member.display_name}",
+        color=_status_color(member.status),
+    )
+    embed.set_thumbnail(url=member.display_avatar.url)
+
+    if not history:
+        embed.description = "No presence changes recorded yet for this member."
+    else:
+        lines = []
+        for entry in history:
+            before_emoji = STATUS_LABELS.get(discord.Status(entry["before"]), ("❓", entry["before"]))[0]
+            after_emoji = STATUS_LABELS.get(discord.Status(entry["after"]), ("❓", entry["after"]))[0]
+            ts = datetime.fromisoformat(entry["timestamp"])
+            discord_ts = f"<t:{int(ts.timestamp())}:R>"
+            lines.append(f"{before_emoji} → {after_emoji} {discord_ts}")
+        embed.description = "\n".join(lines)
+
+    embed.set_footer(text=f"Showing up to {entries} most recent • User ID: {member.id}")
+    await interaction.response.send_message(embed=embed, ephemeral=True)
 
 
 @tree.command(name="statuslist", description="Show the current status of every member in the server.")
@@ -73,7 +104,6 @@ async def statuslist(interaction: discord.Interaction):
             embed.add_field(name=f"{emoji} {label} (0)", value="—", inline=True)
 
     embed.set_footer(text=f"Requested by {interaction.user.display_name}")
-
     await interaction.followup.send(embed=embed, ephemeral=True)
 
 
@@ -111,7 +141,6 @@ async def statuscheck(interaction: discord.Interaction, member: discord.Member):
 
     embed.set_thumbnail(url=member.display_avatar.url)
     embed.set_footer(text=f"User ID: {member.id}")
-
     await interaction.response.send_message(embed=embed, ephemeral=True)
 
 
@@ -131,6 +160,13 @@ async def setstatus(interaction: discord.Interaction, channel: discord.TextChann
 async def on_presence_update(before: discord.Member, after: discord.Member):
     if before.status == after.status:
         return
+
+    append_entry(
+        member_id=after.id,
+        member_name=after.display_name,
+        before=str(before.status),
+        after=str(after.status),
+    )
 
     log_channel_id = get_log_channel_id()
     if not log_channel_id:
