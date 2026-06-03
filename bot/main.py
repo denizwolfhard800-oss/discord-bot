@@ -100,12 +100,46 @@ async def before_check():
 
 # ── Slash commands ────────────────────────────────────────────────────────────
 
-@tree.command(name="checkinactive", description="Manually run the inactive-member check right now.")
+@tree.command(name="checkinactive", description="Show all members who haven't been online in 30+ days.")
 @app_commands.default_permissions(administrator=True)
 async def checkinactive(interaction: discord.Interaction):
     await interaction.response.defer(ephemeral=True)
-    await check_inactive_members()
-    await interaction.followup.send("✅ Inactive member check complete. Results posted to the log channel.", ephemeral=True)
+
+    now = datetime.now(timezone.utc)
+    cutoff = now - timedelta(days=INACTIVE_DAYS)
+    flagged = []
+
+    for member in interaction.guild.members:
+        if member.bot:
+            continue
+        if member.status in (discord.Status.online, discord.Status.idle, discord.Status.dnd):
+            continue
+        last_online = get_last_seen_online(member.id)
+        if last_online is None or last_online < cutoff:
+            flagged.append((member, last_online))
+
+    if not flagged:
+        await interaction.followup.send(
+            f"✅ No members have been inactive for {INACTIVE_DAYS}+ days.",
+            ephemeral=True,
+        )
+        return
+
+    lines = []
+    for member, last_online in flagged:
+        if last_online:
+            ts = f"<t:{int(last_online.timestamp())}:R>"
+            lines.append(f"• **{member.display_name}** — last online {ts}")
+        else:
+            lines.append(f"• **{member.display_name}** — never seen online since tracking began")
+
+    embed = discord.Embed(
+        title=f"⚠️ Inactive Members ({len(flagged)})",
+        description="\n".join(lines),
+        color=0xE67E22,
+    )
+    embed.set_footer(text=f"Members currently offline for {INACTIVE_DAYS}+ days")
+    await interaction.followup.send(embed=embed, ephemeral=True)
 
 
 @tree.command(name="presencelog", description="Show recent presence changes for a member.")

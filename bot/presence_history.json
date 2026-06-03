@@ -1069,5 +1069,82 @@
     "before": "offline",
     "after": "dnd",
     "timestamp": "2026-06-03T16:43:30.617235+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-03T16:44:40.362462+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-03T16:44:41.246357+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-03T16:44:43.500995+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-03T16:44:44.100046+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-03T16:44:44.751755+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-03T16:44:54.429399+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-03T16:45:00.339321+00:00"
+  },
+  {
+    "member_id": 1027845326742241330,
+    "member_name": "mirror",
+    "before": "offline",
+    "after": "online",
+    "timestamp": "2026-06-03T16:46:02.334448+00:00"
+  },
+  {
+    "member_id": 990730255272669236,
+    "member_name": "\u2605Sonia\u2605 he/him/any",
+    "before": "offline",
+    "after": "dnd",
+    "timestamp": "2026-06-03T16:46:28.254486+00:00"
+  },
+  {
+    "member_id": 662720166290915381,
+    "member_name": "D\u00e1vid (Hungary)",
+    "before": "dnd",
+    "after": "offline",
+    "timestamp": "2026-06-03T16:46:46.354402+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "offline",
+    "after": "online",
+    "timestamp": "2026-06-03T16:47:01.396969+00:00"
   }
 ]
