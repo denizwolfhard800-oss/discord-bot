@@ -31,6 +31,44 @@ async def on_ready():
         print("WARNING: No log channel set. Use /setstatus in your server to configure one.")
 
 
+@tree.command(name="statuscheck", description="Check the current presence status of a member.")
+@app_commands.describe(member="The member to check")
+@app_commands.default_permissions(administrator=True)
+async def statuscheck(interaction: discord.Interaction, member: discord.Member):
+    emoji, label = STATUS_LABELS.get(member.status, ("❓", str(member.status)))
+
+    embed = discord.Embed(
+        description=f"Current status for **{member.display_name}**",
+        color=_status_color(member.status),
+    )
+    embed.add_field(name="Status", value=f"{emoji} {label}", inline=True)
+
+    activities = [a for a in member.activities if not isinstance(a, discord.CustomActivity)]
+    custom = next((a for a in member.activities if isinstance(a, discord.CustomActivity)), None)
+
+    if custom and custom.name:
+        embed.add_field(name="Custom Status", value=str(custom.name), inline=True)
+
+    if activities:
+        activity_lines = []
+        for a in activities:
+            if isinstance(a, discord.Spotify):
+                activity_lines.append(f"🎵 Listening to **{a.title}** by {a.artist}")
+            elif isinstance(a, discord.Game):
+                activity_lines.append(f"🎮 Playing **{a.name}**")
+            elif isinstance(a, discord.Streaming):
+                activity_lines.append(f"📡 Streaming **{a.name}**")
+            elif isinstance(a, discord.Activity):
+                activity_lines.append(f"▶️ {a.type.name.capitalize()} **{a.name}**")
+        if activity_lines:
+            embed.add_field(name="Activity", value="\n".join(activity_lines), inline=False)
+
+    embed.set_thumbnail(url=member.display_avatar.url)
+    embed.set_footer(text=f"User ID: {member.id}")
+
+    await interaction.response.send_message(embed=embed, ephemeral=True)
+
+
 @tree.command(name="setstatus", description="Set the channel where presence changes are logged.")
 @app_commands.describe(channel="The channel to send presence logs to")
 @app_commands.default_permissions(administrator=True)
