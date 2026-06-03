@@ -19,5 +19,68 @@
     "before": "idle",
     "after": "offline",
     "timestamp": "2026-06-03T15:33:56.755996+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-03T15:36:36.282620+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "offline",
+    "after": "dnd",
+    "timestamp": "2026-06-03T15:38:52.871929+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "offline",
+    "after": "idle",
+    "timestamp": "2026-06-03T15:41:39.910068+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "offline",
+    "after": "online",
+    "timestamp": "2026-06-03T15:42:27.965901+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-03T15:42:58.373710+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-03T15:43:46.949069+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-03T15:43:46.953704+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-03T15:44:36.421848+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-03T15:44:36.426945+00:00"
   }
 ]
