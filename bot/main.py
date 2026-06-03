@@ -1,14 +1,15 @@
 import discord
+from discord import app_commands
 import os
 from keep_alive import keep_alive
-
-LOG_CHANNEL_ID = int(os.environ.get("LOG_CHANNEL_ID", "0"))
+from config import get_log_channel_id, set_log_channel_id
 
 intents = discord.Intents.default()
 intents.presences = True
 intents.members = True
 
 client = discord.Client(intents=intents)
+tree = app_commands.CommandTree(client)
 
 STATUS_LABELS = {
     discord.Status.online: ("🟢", "Online"),
@@ -20,8 +21,26 @@ STATUS_LABELS = {
 
 @client.event
 async def on_ready():
+    await tree.sync()
+    log_channel_id = get_log_channel_id()
     print(f"Logged in as {client.user} (ID: {client.user.id})")
-    print(f"Logging presence changes to channel ID: {LOG_CHANNEL_ID}")
+    print(f"Slash commands synced globally.")
+    if log_channel_id:
+        print(f"Logging presence changes to channel ID: {log_channel_id}")
+    else:
+        print("WARNING: No log channel set. Use /setstatus in your server to configure one.")
+
+
+@tree.command(name="setstatus", description="Set the channel where presence changes are logged.")
+@app_commands.describe(channel="The channel to send presence logs to")
+@app_commands.default_permissions(administrator=True)
+async def setstatus(interaction: discord.Interaction, channel: discord.TextChannel):
+    set_log_channel_id(channel.id)
+    await interaction.response.send_message(
+        f"✅ Presence logs will now be sent to {channel.mention}.",
+        ephemeral=True,
+    )
+    print(f"Log channel updated to #{channel.name} (ID: {channel.id}) by {interaction.user}")
 
 
 @client.event
@@ -29,13 +48,13 @@ async def on_presence_update(before: discord.Member, after: discord.Member):
     if before.status == after.status:
         return
 
-    if LOG_CHANNEL_ID == 0:
-        print("WARNING: LOG_CHANNEL_ID is not set. Set it as an environment variable.")
+    log_channel_id = get_log_channel_id()
+    if not log_channel_id:
         return
 
-    channel = client.get_channel(LOG_CHANNEL_ID)
+    channel = client.get_channel(log_channel_id)
     if channel is None:
-        print(f"WARNING: Could not find channel with ID {LOG_CHANNEL_ID}")
+        print(f"WARNING: Could not find channel with ID {log_channel_id}")
         return
 
     before_emoji, before_label = STATUS_LABELS.get(before.status, ("❓", str(before.status)))
