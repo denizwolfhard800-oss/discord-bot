@@ -1048,5 +1048,26 @@
     "before": "dnd",
     "after": "offline",
     "timestamp": "2026-06-03T16:42:49.873241+00:00"
+  },
+  {
+    "member_id": 1424727768217813135,
+    "member_name": "Eny",
+    "before": "offline",
+    "after": "online",
+    "timestamp": "2026-06-03T16:43:24.185905+00:00"
+  },
+  {
+    "member_id": 1424727768217813135,
+    "member_name": "Eny",
+    "before": "online",
+    "after": "offline",
+    "timestamp": "2026-06-03T16:43:26.347092+00:00"
+  },
+  {
+    "member_id": 956532940639203399,
+    "member_name": "Alexein/bird/Robin",
+    "before": "offline",
+    "after": "dnd",
+    "timestamp": "2026-06-03T16:43:30.617235+00:00"
   }
 ]
