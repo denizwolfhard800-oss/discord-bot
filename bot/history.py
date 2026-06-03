@@ -26,6 +26,31 @@ def get_entries(member_id: int, limit: int = 10) -> list[dict]:
     return member_entries[-limit:][::-1]
 
 
+def get_stats(member_id: int) -> dict:
+    """Return seconds spent in each status for a member, based on logged history."""
+    entries = _load()
+    member_entries = [e for e in entries if e["member_id"] == member_id]
+
+    totals: dict[str, float] = {"online": 0, "idle": 0, "dnd": 0, "offline": 0}
+
+    if not member_entries:
+        return totals
+
+    now = datetime.now(timezone.utc)
+
+    for i, entry in enumerate(member_entries):
+        status = entry["after"]
+        start = datetime.fromisoformat(entry["timestamp"])
+        end = datetime.fromisoformat(member_entries[i + 1]["timestamp"]) if i + 1 < len(member_entries) else now
+        duration = (end - start).total_seconds()
+        if status in totals:
+            totals[status] += duration
+
+    totals["first_seen"] = member_entries[0]["timestamp"]
+    totals["total_entries"] = len(member_entries)
+    return totals
+
+
 def _load() -> list[dict]:
     if os.path.exists(HISTORY_PATH):
         with open(HISTORY_PATH, "r") as f:

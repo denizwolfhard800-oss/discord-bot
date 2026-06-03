@@ -4,7 +4,7 @@ import os
 from datetime import datetime, timezone
 from keep_alive import keep_alive
 from config import get_log_channel_id, set_log_channel_id
-from history import append_entry, get_entries
+from history import append_entry, get_entries, get_stats
 
 intents = discord.Intents.default()
 intents.presences = True
@@ -59,6 +59,67 @@ async def presencelog(interaction: discord.Interaction, member: discord.Member, 
         embed.description = "\n".join(lines)
 
     embed.set_footer(text=f"Showing up to {entries} most recent • User ID: {member.id}")
+    await interaction.response.send_message(embed=embed, ephemeral=True)
+
+
+@tree.command(name="presencestats", description="Show a breakdown of time spent in each status for a member.")
+@app_commands.describe(member="The member to analyse")
+@app_commands.default_permissions(administrator=True)
+async def presencestats(interaction: discord.Interaction, member: discord.Member):
+    stats = get_stats(member.id)
+
+    if stats.get("total_entries", 0) == 0:
+        await interaction.response.send_message(
+            f"No presence history recorded for **{member.display_name}** yet.",
+            ephemeral=True,
+        )
+        return
+
+    total_seconds = sum(stats[s] for s in ("online", "idle", "dnd", "offline"))
+
+    def fmt(seconds: float) -> str:
+        seconds = int(seconds)
+        h, rem = divmod(seconds, 3600)
+        m, s = divmod(rem, 60)
+        if h:
+            return f"{h}h {m}m"
+        if m:
+            return f"{m}m {s}s"
+        return f"{s}s"
+
+    def pct(seconds: float) -> str:
+        if total_seconds == 0:
+            return "0%"
+        return f"{seconds / total_seconds * 100:.1f}%"
+
+    def bar(seconds: float, width: int = 12) -> str:
+        filled = round((seconds / total_seconds) * width) if total_seconds else 0
+        return "█" * filled + "░" * (width - filled)
+
+    embed = discord.Embed(
+        title=f"Presence Stats — {member.display_name}",
+        color=_status_color(member.status),
+    )
+    embed.set_thumbnail(url=member.display_avatar.url)
+
+    for status_key, (emoji, label) in [
+        ("online",  STATUS_LABELS[discord.Status.online]),
+        ("idle",    STATUS_LABELS[discord.Status.idle]),
+        ("dnd",     STATUS_LABELS[discord.Status.dnd]),
+        ("offline", STATUS_LABELS[discord.Status.offline]),
+    ]:
+        secs = stats[status_key]
+        embed.add_field(
+            name=f"{emoji} {label}",
+            value=f"`{bar(secs)}` {pct(secs)}\n{fmt(secs)}",
+            inline=True,
+        )
+
+    first_seen = datetime.fromisoformat(stats["first_seen"])
+    embed.add_field(name="Total tracked", value=fmt(total_seconds), inline=True)
+    embed.add_field(name="Changes logged", value=str(stats["total_entries"]), inline=True)
+    embed.set_footer(text=f"Tracking since {first_seen.strftime('%Y-%m-%d %H:%M UTC')} • User ID: {member.id}")
+
     await interaction.response.send_message(embed=embed, ephemeral=True)
 
 

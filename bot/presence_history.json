@@ -5,5 +5,19 @@
     "before": "offline",
     "after": "dnd",
     "timestamp": "2026-06-03T15:33:17.094436+00:00"
+  },
+  {
+    "member_id": 1314360225712832596,
+    "member_name": "suki",
+    "before": "offline",
+    "after": "idle",
+    "timestamp": "2026-06-03T15:33:43.695835+00:00"
+  },
+  {
+    "member_id": 1314360225712832596,
+    "member_name": "suki",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-03T15:33:56.755996+00:00"
   }
 ]
