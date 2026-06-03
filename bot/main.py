@@ -101,7 +101,7 @@ async def before_check():
 # ── Slash commands ────────────────────────────────────────────────────────────
 
 @tree.command(name="checkinactive", description="Show all members who haven't been online in 30+ days.")
-@app_commands.default_permissions(administrator=True)
+@app_commands.default_permissions(manage_guild=True)
 async def checkinactive(interaction: discord.Interaction):
     await interaction.response.defer(ephemeral=True)
 
@@ -144,7 +144,7 @@ async def checkinactive(interaction: discord.Interaction):
 
 @tree.command(name="presencelog", description="Show recent presence changes for a member.")
 @app_commands.describe(member="The member to look up", entries="Number of entries to show (default 10, max 25)")
-@app_commands.default_permissions(administrator=True)
+@app_commands.default_permissions(manage_guild=True)
 async def presencelog(interaction: discord.Interaction, member: discord.Member, entries: int = 10):
     entries = max(1, min(entries, 25))
     history = get_entries(member.id, limit=entries)
@@ -173,7 +173,7 @@ async def presencelog(interaction: discord.Interaction, member: discord.Member, 
 
 @tree.command(name="topactive", description="Rank all members by time spent online.")
 @app_commands.describe(limit="Number of members to show (default 10, max 25)")
-@app_commands.default_permissions(administrator=True)
+@app_commands.default_permissions(manage_guild=True)
 async def topactive(interaction: discord.Interaction, limit: int = 10):
     await interaction.response.defer(ephemeral=True)
 
@@ -222,7 +222,7 @@ async def topactive(interaction: discord.Interaction, limit: int = 10):
 
 @tree.command(name="presencestats", description="Show a breakdown of time spent in each status for a member.")
 @app_commands.describe(member="The member to analyse")
-@app_commands.default_permissions(administrator=True)
+@app_commands.default_permissions(manage_guild=True)
 async def presencestats(interaction: discord.Interaction, member: discord.Member):
     stats = get_stats(member.id)
 
@@ -281,7 +281,7 @@ async def presencestats(interaction: discord.Interaction, member: discord.Member
 
 
 @tree.command(name="statuslist", description="Show the current status of every member in the server.")
-@app_commands.default_permissions(administrator=True)
+@app_commands.default_permissions(manage_guild=True)
 async def statuslist(interaction: discord.Interaction):
     await interaction.response.defer(ephemeral=True)
 
@@ -327,7 +327,7 @@ async def statuslist(interaction: discord.Interaction):
 
 @tree.command(name="statuscheck", description="Check the current presence status of a member.")
 @app_commands.describe(member="The member to check")
-@app_commands.default_permissions(administrator=True)
+@app_commands.default_permissions(manage_guild=True)
 async def statuscheck(interaction: discord.Interaction, member: discord.Member):
     emoji, label = STATUS_LABELS.get(member.status, ("❓", str(member.status)))
 
@@ -364,7 +364,7 @@ async def statuscheck(interaction: discord.Interaction, member: discord.Member):
 
 @tree.command(name="setstatus", description="Set the channel where presence changes are logged.")
 @app_commands.describe(channel="The channel to send presence logs to")
-@app_commands.default_permissions(administrator=True)
+@app_commands.default_permissions(manage_guild=True)
 async def setstatus(interaction: discord.Interaction, channel: discord.TextChannel):
     set_log_channel_id(channel.id)
     await interaction.response.send_message(
