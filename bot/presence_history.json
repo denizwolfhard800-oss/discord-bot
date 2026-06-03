@@ -1146,5 +1146,54 @@
     "before": "offline",
     "after": "online",
     "timestamp": "2026-06-03T16:47:01.396969+00:00"
+  },
+  {
+    "member_id": 662720166290915381,
+    "member_name": "D\u00e1vid (Hungary)",
+    "before": "offline",
+    "after": "dnd",
+    "timestamp": "2026-06-03T16:47:48.610932+00:00"
+  },
+  {
+    "member_id": 1027845326742241330,
+    "member_name": "mirror",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-03T16:48:12.051521+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-03T16:48:45.106421+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-03T16:48:50.567430+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-03T16:49:38.808281+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-03T16:49:48.290184+00:00"
+  },
+  {
+    "member_id": 1027845326742241330,
+    "member_name": "mirror",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-03T16:49:55.003594+00:00"
   }
 ]
