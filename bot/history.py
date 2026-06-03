@@ -51,6 +51,16 @@ def get_stats(member_id: int) -> dict:
     return totals
 
 
+def get_last_seen_online(member_id: int) -> datetime | None:
+    """Return the timestamp of the most recent time this member went online, or None."""
+    entries = _load()
+    member_entries = [e for e in entries if e["member_id"] == member_id]
+    for entry in reversed(member_entries):
+        if entry["after"] == "online":
+            return datetime.fromisoformat(entry["timestamp"])
+    return None
+
+
 def get_all_stats() -> list[dict]:
     """Return a list of per-member stats dicts, sorted by online seconds descending."""
     entries = _load()

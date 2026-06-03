@@ -1,5 +1,6 @@
 import json
 import os
+from datetime import datetime, timezone
 
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "config.json")
 
@@ -29,4 +30,26 @@ def get_log_channel_id() -> int | None:
 def set_log_channel_id(channel_id: int) -> None:
     config = load_config()
     config["log_channel_id"] = channel_id
+    save_config(config)
+
+
+def get_warned_members() -> dict:
+    """Return {member_id_str: iso_timestamp_of_warning}."""
+    return load_config().get("warned_inactive", {})
+
+
+def mark_member_warned(member_id: int) -> None:
+    config = load_config()
+    warned = config.get("warned_inactive", {})
+    warned[str(member_id)] = datetime.now(timezone.utc).isoformat()
+    config["warned_inactive"] = warned
+    save_config(config)
+
+
+def clear_member_warned(member_id: int) -> None:
+    """Call this when a member comes back online so they can be warned again next time."""
+    config = load_config()
+    warned = config.get("warned_inactive", {})
+    warned.pop(str(member_id), None)
+    config["warned_inactive"] = warned
     save_config(config)

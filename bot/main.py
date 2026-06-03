@@ -1,10 +1,16 @@
 import discord
 from discord import app_commands
+from discord.ext import tasks
 import os
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from keep_alive import keep_alive
-from config import get_log_channel_id, set_log_channel_id
-from history import append_entry, get_entries, get_stats, get_all_stats
+from config import (
+    get_log_channel_id, set_log_channel_id,
+    get_warned_members, mark_member_warned, clear_member_warned,
+)
+from history import append_entry, get_entries, get_stats, get_all_stats, get_last_seen_online
+
+INACTIVE_DAYS = 30
 
 intents = discord.Intents.default()
 intents.presences = True
@@ -31,6 +37,75 @@ async def on_ready():
         print(f"Logging presence changes to channel ID: {log_channel_id}")
     else:
         print("WARNING: No log channel set. Use /setstatus in your server to configure one.")
+    check_inactive_members.start()
+
+
+# ── Daily inactive-member check ──────────────────────────────────────────────
+
+@tasks.loop(hours=24)
+async def check_inactive_members():
+    log_channel_id = get_log_channel_id()
+    if not log_channel_id:
+        return
+
+    channel = client.get_channel(log_channel_id)
+    if channel is None:
+        return
+
+    now = datetime.now(timezone.utc)
+    cutoff = now - timedelta(days=INACTIVE_DAYS)
+    warned = get_warned_members()
+    flagged = []
+
+    for guild in client.guilds:
+        for member in guild.members:
+            if member.bot:
+                continue
+            if member.status in (discord.Status.online, discord.Status.idle, discord.Status.dnd):
+                clear_member_warned(member.id)
+                continue
+            if str(member.id) in warned:
+                continue
+
+            last_online = get_last_seen_online(member.id)
+            if last_online is None or last_online < cutoff:
+                flagged.append((member, last_online))
+                mark_member_warned(member.id)
+
+    if not flagged:
+        return
+
+    lines = []
+    for member, last_online in flagged:
+        if last_online:
+            ts = f"<t:{int(last_online.timestamp())}:R>"
+            lines.append(f"• **{member.display_name}** — last online {ts}")
+        else:
+            lines.append(f"• **{member.display_name}** — never seen online since tracking began")
+
+    embed = discord.Embed(
+        title=f"⚠️ Inactive Members ({len(flagged)})",
+        description="\n".join(lines),
+        color=0xE67E22,
+    )
+    embed.set_footer(text=f"These members have not been online in {INACTIVE_DAYS}+ days")
+    await channel.send(embed=embed)
+    print(f"Sent inactivity warning for {len(flagged)} member(s).")
+
+
+@check_inactive_members.before_loop
+async def before_check():
+    await client.wait_until_ready()
+
+
+# ── Slash commands ────────────────────────────────────────────────────────────
+
+@tree.command(name="checkinactive", description="Manually run the inactive-member check right now.")
+@app_commands.default_permissions(administrator=True)
+async def checkinactive(interaction: discord.Interaction):
+    await interaction.response.defer(ephemeral=True)
+    await check_inactive_members()
+    await interaction.followup.send("✅ Inactive member check complete. Results posted to the log channel.", ephemeral=True)
 
 
 @tree.command(name="presencelog", description="Show recent presence changes for a member.")
@@ -108,7 +183,6 @@ async def topactive(interaction: discord.Interaction, limit: int = 10):
         color=0xF1C40F,
     )
     embed.set_footer(text=f"Ranked by total online time • Top {len(top)} of {len(all_stats)} tracked members")
-
     await interaction.followup.send(embed=embed, ephemeral=True)
 
 
@@ -169,7 +243,6 @@ async def presencestats(interaction: discord.Interaction, member: discord.Member
     embed.add_field(name="Total tracked", value=fmt(total_seconds), inline=True)
     embed.add_field(name="Changes logged", value=str(stats["total_entries"]), inline=True)
     embed.set_footer(text=f"Tracking since {first_seen.strftime('%Y-%m-%d %H:%M UTC')} • User ID: {member.id}")
-
     await interaction.response.send_message(embed=embed, ephemeral=True)
 
 
@@ -267,6 +340,8 @@ async def setstatus(interaction: discord.Interaction, channel: discord.TextChann
     print(f"Log channel updated to #{channel.name} (ID: {channel.id}) by {interaction.user}")
 
 
+# ── Presence event ────────────────────────────────────────────────────────────
+
 @client.event
 async def on_presence_update(before: discord.Member, after: discord.Member):
     if before.status == after.status:
@@ -278,6 +353,9 @@ async def on_presence_update(before: discord.Member, after: discord.Member):
         before=str(before.status),
         after=str(after.status),
     )
+
+    if after.status == discord.Status.online:
+        clear_member_warned(after.id)
 
     log_channel_id = get_log_channel_id()
     if not log_channel_id:

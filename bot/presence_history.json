@@ -782,5 +782,271 @@
     "before": "online",
     "after": "idle",
     "timestamp": "2026-06-03T16:22:25.464182+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-03T16:23:22.968113+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-03T16:23:27.408079+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "offline",
+    "after": "dnd",
+    "timestamp": "2026-06-03T16:23:51.793447+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-03T16:24:31.667088+00:00"
+  },
+  {
+    "member_id": 1272398646784299019,
+    "member_name": "\ufe55 \ua4b0\u10d0  Riri .\u141f  \u05b9   \u208a",
+    "before": "offline",
+    "after": "dnd",
+    "timestamp": "2026-06-03T16:24:59.865114+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "dnd",
+    "after": "offline",
+    "timestamp": "2026-06-03T16:25:51.961385+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-03T16:28:13.085295+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-03T16:29:29.831512+00:00"
+  },
+  {
+    "member_id": 1427525188844654605,
+    "member_name": "Juicy",
+    "before": "offline",
+    "after": "online",
+    "timestamp": "2026-06-03T16:30:08.349045+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-03T16:30:11.058686+00:00"
+  },
+  {
+    "member_id": 1427525188844654605,
+    "member_name": "Juicy",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-03T16:30:15.516787+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-03T16:31:01.000595+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-03T16:31:11.918650+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-03T16:31:12.445674+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-03T16:31:14.793480+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-03T16:31:29.570879+00:00"
+  },
+  {
+    "member_id": 990730255272669236,
+    "member_name": "\u2605Sonia\u2605 he/him/any",
+    "before": "dnd",
+    "after": "offline",
+    "timestamp": "2026-06-03T16:31:36.346575+00:00"
+  },
+  {
+    "member_id": 662720166290915381,
+    "member_name": "D\u00e1vid (Hungary)",
+    "before": "dnd",
+    "after": "offline",
+    "timestamp": "2026-06-03T16:32:09.481137+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-03T16:32:09.952701+00:00"
+  },
+  {
+    "member_id": 1427525188844654605,
+    "member_name": "Juicy",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-03T16:32:11.097592+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-03T16:33:39.930278+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-03T16:33:48.616481+00:00"
+  },
+  {
+    "member_id": 1027845326742241330,
+    "member_name": "mirror",
+    "before": "offline",
+    "after": "online",
+    "timestamp": "2026-06-03T16:35:48.350131+00:00"
+  },
+  {
+    "member_id": 1027845326742241330,
+    "member_name": "mirror",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-03T16:35:51.168491+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "offline",
+    "after": "dnd",
+    "timestamp": "2026-06-03T16:36:19.448041+00:00"
+  },
+  {
+    "member_id": 1106625011869040640,
+    "member_name": "Mr chill",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-03T16:36:21.222248+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-03T16:36:26.765274+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "offline",
+    "after": "online",
+    "timestamp": "2026-06-03T16:37:37.987859+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-03T16:38:02.846133+00:00"
+  },
+  {
+    "member_id": 1027845326742241330,
+    "member_name": "mirror",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-03T16:38:07.271150+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-03T16:38:26.341571+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-03T16:39:24.628556+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-03T16:39:28.318547+00:00"
+  },
+  {
+    "member_id": 662720166290915381,
+    "member_name": "D\u00e1vid (Hungary)",
+    "before": "offline",
+    "after": "dnd",
+    "timestamp": "2026-06-03T16:40:50.561186+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-03T16:41:25.449946+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "offline",
+    "after": "idle",
+    "timestamp": "2026-06-03T16:42:07.402020+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-03T16:42:10.506103+00:00"
+  },
+  {
+    "member_id": 956532940639203399,
+    "member_name": "Alexein/bird/Robin",
+    "before": "dnd",
+    "after": "offline",
+    "timestamp": "2026-06-03T16:42:49.873241+00:00"
   }
 ]
