@@ -761,5 +761,26 @@
     "before": "online",
     "after": "idle",
     "timestamp": "2026-06-03T16:19:37.467277+00:00"
+  },
+  {
+    "member_id": 662720166290915381,
+    "member_name": "D\u00e1vid (Hungary)",
+    "before": "offline",
+    "after": "dnd",
+    "timestamp": "2026-06-03T16:20:21.809994+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-03T16:21:40.031413+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-03T16:22:25.464182+00:00"
   }
 ]
