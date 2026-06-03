@@ -4,7 +4,7 @@ import os
 from datetime import datetime, timezone
 from keep_alive import keep_alive
 from config import get_log_channel_id, set_log_channel_id
-from history import append_entry, get_entries, get_stats
+from history import append_entry, get_entries, get_stats, get_all_stats
 
 intents = discord.Intents.default()
 intents.presences = True
@@ -60,6 +60,56 @@ async def presencelog(interaction: discord.Interaction, member: discord.Member, 
 
     embed.set_footer(text=f"Showing up to {entries} most recent • User ID: {member.id}")
     await interaction.response.send_message(embed=embed, ephemeral=True)
+
+
+@tree.command(name="topactive", description="Rank all members by time spent online.")
+@app_commands.describe(limit="Number of members to show (default 10, max 25)")
+@app_commands.default_permissions(administrator=True)
+async def topactive(interaction: discord.Interaction, limit: int = 10):
+    await interaction.response.defer(ephemeral=True)
+
+    limit = max(1, min(limit, 25))
+    all_stats = get_all_stats()
+
+    guild_member_ids = {m.id for m in interaction.guild.members if not m.bot}
+    all_stats = [s for s in all_stats if s["member_id"] in guild_member_ids]
+
+    if not all_stats:
+        await interaction.followup.send("No presence history recorded yet.", ephemeral=True)
+        return
+
+    top = all_stats[:limit]
+    max_online = top[0]["online"] if top else 1
+
+    def fmt(seconds: float) -> str:
+        seconds = int(seconds)
+        h, rem = divmod(seconds, 3600)
+        m, s = divmod(rem, 60)
+        if h:
+            return f"{h}h {m}m"
+        if m:
+            return f"{m}m {s}s"
+        return f"{s}s"
+
+    def bar(seconds: float, width: int = 8) -> str:
+        filled = round((seconds / max_online) * width) if max_online else 0
+        return "█" * filled + "░" * (width - filled)
+
+    lines = []
+    for rank, s in enumerate(top, start=1):
+        medal = {1: "🥇", 2: "🥈", 3: "🥉"}.get(rank, f"`#{rank}`")
+        name = s["member_name"]
+        online_time = fmt(s["online"])
+        lines.append(f"{medal} **{name}** — {online_time} online `{bar(s['online'])}`")
+
+    embed = discord.Embed(
+        title="🏆 Most Active Members",
+        description="\n".join(lines),
+        color=0xF1C40F,
+    )
+    embed.set_footer(text=f"Ranked by total online time • Top {len(top)} of {len(all_stats)} tracked members")
+
+    await interaction.followup.send(embed=embed, ephemeral=True)
 
 
 @tree.command(name="presencestats", description="Show a breakdown of time spent in each status for a member.")
