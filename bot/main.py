@@ -31,6 +31,52 @@ async def on_ready():
         print("WARNING: No log channel set. Use /setstatus in your server to configure one.")
 
 
+@tree.command(name="statuslist", description="Show the current status of every member in the server.")
+@app_commands.default_permissions(administrator=True)
+async def statuslist(interaction: discord.Interaction):
+    await interaction.response.defer(ephemeral=True)
+
+    buckets: dict[discord.Status, list[str]] = {
+        discord.Status.online: [],
+        discord.Status.idle: [],
+        discord.Status.dnd: [],
+        discord.Status.offline: [],
+    }
+
+    for member in interaction.guild.members:
+        if member.bot:
+            continue
+        bucket = buckets.get(member.status)
+        if bucket is not None:
+            bucket.append(member.display_name)
+        else:
+            buckets.setdefault(member.status, []).append(member.display_name)
+
+    total = sum(len(v) for v in buckets.values())
+
+    embed = discord.Embed(
+        title="Member Status Overview",
+        description=f"{total} members total",
+        color=0x5865F2,
+    )
+
+    order = [discord.Status.online, discord.Status.idle, discord.Status.dnd, discord.Status.offline]
+    for status in order:
+        emoji, label = STATUS_LABELS[status]
+        members = buckets.get(status, [])
+        if members:
+            names = "\n".join(members[:30])
+            if len(members) > 30:
+                names += f"\n… and {len(members) - 30} more"
+            embed.add_field(name=f"{emoji} {label} ({len(members)})", value=names, inline=True)
+        else:
+            embed.add_field(name=f"{emoji} {label} (0)", value="—", inline=True)
+
+    embed.set_footer(text=f"Requested by {interaction.user.display_name}")
+
+    await interaction.followup.send(embed=embed, ephemeral=True)
+
+
 @tree.command(name="statuscheck", description="Check the current presence status of a member.")
 @app_commands.describe(member="The member to check")
 @app_commands.default_permissions(administrator=True)
