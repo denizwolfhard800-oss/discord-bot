@@ -1867,5 +1867,12 @@
     "before": "idle",
     "after": "offline",
     "timestamp": "2026-06-04T06:14:18.752396+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T06:14:59.821306+00:00"
   }
 ]
