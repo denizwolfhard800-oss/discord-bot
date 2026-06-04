@@ -2056,5 +2056,19 @@
     "before": "idle",
     "after": "offline",
     "timestamp": "2026-06-04T07:17:12.073207+00:00"
+  },
+  {
+    "member_id": 813462978464317460,
+    "member_name": "R.I.P ArneSlotMachine 2024-2026",
+    "before": "offline",
+    "after": "online",
+    "timestamp": "2026-06-04T07:21:34.294172+00:00"
+  },
+  {
+    "member_id": 813462978464317460,
+    "member_name": "R.I.P ArneSlotMachine 2024-2026",
+    "before": "online",
+    "after": "offline",
+    "timestamp": "2026-06-04T07:23:35.909716+00:00"
   }
 ]
