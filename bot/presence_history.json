@@ -1895,5 +1895,110 @@
     "before": "dnd",
     "after": "offline",
     "timestamp": "2026-06-04T06:20:56.335553+00:00"
+  },
+  {
+    "member_id": 1027845326742241330,
+    "member_name": "mirror",
+    "before": "offline",
+    "after": "online",
+    "timestamp": "2026-06-04T06:21:21.726495+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "offline",
+    "after": "dnd",
+    "timestamp": "2026-06-04T06:21:27.937834+00:00"
+  },
+  {
+    "member_id": 1027845326742241330,
+    "member_name": "mirror",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T06:21:40.915625+00:00"
+  },
+  {
+    "member_id": 1027845326742241330,
+    "member_name": "mirror",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-04T06:21:40.925476+00:00"
+  },
+  {
+    "member_id": 1027845326742241330,
+    "member_name": "mirror",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T06:22:26.451227+00:00"
+  },
+  {
+    "member_id": 1078902292167803010,
+    "member_name": "\ud83d\udef8\u0fd0\u22b9",
+    "before": "offline",
+    "after": "idle",
+    "timestamp": "2026-06-04T06:22:56.873767+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "dnd",
+    "after": "offline",
+    "timestamp": "2026-06-04T06:23:30.070740+00:00"
+  },
+  {
+    "member_id": 1027845326742241330,
+    "member_name": "mirror",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-04T06:24:23.014245+00:00"
+  },
+  {
+    "member_id": 1078902292167803010,
+    "member_name": "\ud83d\udef8\u0fd0\u22b9",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-04T06:25:01.830263+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-04T06:27:15.883770+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T06:27:19.172940+00:00"
+  },
+  {
+    "member_id": 1078902292167803010,
+    "member_name": "\ud83d\udef8\u0fd0\u22b9",
+    "before": "offline",
+    "after": "idle",
+    "timestamp": "2026-06-04T06:29:38.330690+00:00"
+  },
+  {
+    "member_id": 1078902292167803010,
+    "member_name": "\ud83d\udef8\u0fd0\u22b9",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-04T06:31:38.908441+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-04T06:31:42.884970+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T06:31:46.487152+00:00"
   }
 ]
