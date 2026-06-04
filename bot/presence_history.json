@@ -2000,5 +2000,61 @@
     "before": "online",
     "after": "idle",
     "timestamp": "2026-06-04T06:31:46.487152+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-04T06:37:36.135164+00:00"
+  },
+  {
+    "member_id": 1440028235671797933,
+    "member_name": "G00S3",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T06:37:44.600854+00:00"
+  },
+  {
+    "member_id": 1480806531963293706,
+    "member_name": "Incompetent",
+    "before": "offline",
+    "after": "online",
+    "timestamp": "2026-06-04T06:43:38.745504+00:00"
+  },
+  {
+    "member_id": 1106625011869040640,
+    "member_name": "Mr chill",
+    "before": "offline",
+    "after": "online",
+    "timestamp": "2026-06-04T06:45:10.111823+00:00"
+  },
+  {
+    "member_id": 1480806531963293706,
+    "member_name": "Incompetent",
+    "before": "online",
+    "after": "offline",
+    "timestamp": "2026-06-04T06:53:11.272063+00:00"
+  },
+  {
+    "member_id": 990730255272669236,
+    "member_name": "\u2605Sonia\u2605 he/him/any",
+    "before": "offline",
+    "after": "dnd",
+    "timestamp": "2026-06-04T07:13:34.374831+00:00"
+  },
+  {
+    "member_id": 1078902292167803010,
+    "member_name": "\ud83d\udef8\u0fd0\u22b9",
+    "before": "offline",
+    "after": "idle",
+    "timestamp": "2026-06-04T07:14:19.043670+00:00"
+  },
+  {
+    "member_id": 1078902292167803010,
+    "member_name": "\ud83d\udef8\u0fd0\u22b9",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-04T07:17:12.073207+00:00"
   }
 ]
