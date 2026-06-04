@@ -2364,5 +2364,26 @@
     "before": "offline",
     "after": "online",
     "timestamp": "2026-06-04T08:46:20.107019+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "offline",
+    "after": "online",
+    "timestamp": "2026-06-04T08:54:29.544923+00:00"
+  },
+  {
+    "member_id": 1078902292167803010,
+    "member_name": "\ud83d\udef8\u0fd0\u22b9",
+    "before": "online",
+    "after": "offline",
+    "timestamp": "2026-06-04T08:54:31.566804+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T08:54:45.087982+00:00"
   }
 ]
