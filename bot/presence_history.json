@@ -2161,5 +2161,33 @@
     "before": "online",
     "after": "idle",
     "timestamp": "2026-06-04T07:44:27.696206+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-04T08:35:27.234533+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-04T08:35:46.441724+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "offline",
+    "after": "online",
+    "timestamp": "2026-06-04T08:35:52.953296+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T08:35:53.304266+00:00"
   }
 ]
