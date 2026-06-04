@@ -425,4 +425,8 @@ def _status_color(status: discord.Status) -> int:
 
 
 keep_alive()
-client.run(os.environ["DISCORD_BOT_TOKEN"])
+client.run(
+    os.environ["DISCORD_BOT_TOKEN"],
+    reconnect=True,
+    log_handler=None,
+)

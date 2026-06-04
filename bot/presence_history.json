@@ -2427,5 +2427,362 @@
     "before": "offline",
     "after": "online",
     "timestamp": "2026-06-04T08:56:59.767875+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T08:57:51.222067+00:00"
+  },
+  {
+    "member_id": 1078902292167803010,
+    "member_name": "\ud83d\udef8\u0fd0\u22b9",
+    "before": "offline",
+    "after": "online",
+    "timestamp": "2026-06-04T08:58:26.847278+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-04T08:58:47.766796+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T08:58:52.366007+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-04T08:59:43.422126+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-04T08:59:43.881219+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T09:00:09.159034+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "offline",
+    "after": "idle",
+    "timestamp": "2026-06-04T09:00:21.010626+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-04T09:00:35.027703+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T09:00:58.068535+00:00"
+  },
+  {
+    "member_id": 692045914436796436,
+    "member_name": "Truth or Dare",
+    "before": "offline",
+    "after": "online",
+    "timestamp": "2026-06-04T09:01:11.865612+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-04T09:01:48.904043+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T09:01:52.237087+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-04T09:01:52.733091+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T09:01:53.774535+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-04T09:02:00.552877+00:00"
+  },
+  {
+    "member_id": 1078902292167803010,
+    "member_name": "\ud83d\udef8\u0fd0\u22b9",
+    "before": "online",
+    "after": "offline",
+    "timestamp": "2026-06-04T09:02:35.259119+00:00"
+  },
+  {
+    "member_id": 1078902292167803010,
+    "member_name": "\ud83d\udef8\u0fd0\u22b9",
+    "before": "offline",
+    "after": "online",
+    "timestamp": "2026-06-04T09:02:48.273553+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T09:03:47.280186+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-04T09:03:48.902829+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-04T09:04:15.991808+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "offline",
+    "after": "idle",
+    "timestamp": "2026-06-04T09:04:32.087611+00:00"
+  },
+  {
+    "member_id": 1078902292167803010,
+    "member_name": "\ud83d\udef8\u0fd0\u22b9",
+    "before": "online",
+    "after": "offline",
+    "timestamp": "2026-06-04T09:05:04.910393+00:00"
+  },
+  {
+    "member_id": 1078902292167803010,
+    "member_name": "\ud83d\udef8\u0fd0\u22b9",
+    "before": "offline",
+    "after": "online",
+    "timestamp": "2026-06-04T09:05:07.864692+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-04T09:08:05.233802+00:00"
+  },
+  {
+    "member_id": 1078902292167803010,
+    "member_name": "\ud83d\udef8\u0fd0\u22b9",
+    "before": "online",
+    "after": "offline",
+    "timestamp": "2026-06-04T09:09:40.021767+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "offline",
+    "after": "online",
+    "timestamp": "2026-06-04T09:09:57.954684+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T09:10:50.845490+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T09:11:05.375251+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-04T09:11:08.932573+00:00"
+  },
+  {
+    "member_id": 1078902292167803010,
+    "member_name": "\ud83d\udef8\u0fd0\u22b9",
+    "before": "offline",
+    "after": "online",
+    "timestamp": "2026-06-04T09:11:13.830459+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T09:13:09.984695+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-04T09:13:19.975254+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T09:13:38.531441+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-04T09:13:46.330085+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "offline",
+    "after": "idle",
+    "timestamp": "2026-06-04T09:13:47.175857+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-04T09:14:13.515770+00:00"
+  },
+  {
+    "member_id": 1078902292167803010,
+    "member_name": "\ud83d\udef8\u0fd0\u22b9",
+    "before": "online",
+    "after": "offline",
+    "timestamp": "2026-06-04T09:15:19.207969+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T09:15:45.812263+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-04T09:15:49.302844+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "idle",
+    "after": "offline",
+    "timestamp": "2026-06-04T09:17:32.235450+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "offline",
+    "after": "online",
+    "timestamp": "2026-06-04T09:18:50.490938+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T09:19:02.479361+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-04T09:19:17.831304+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T09:20:40.421097+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "offline",
+    "after": "online",
+    "timestamp": "2026-06-04T09:20:44.053486+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-04T09:27:02.830980+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T09:27:10.227301+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T09:27:28.625547+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-04T09:27:38.256771+00:00"
+  },
+  {
+    "member_id": 965990193758871603,
+    "member_name": "maltutu",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T09:27:48.858116+00:00"
   }
 ]
