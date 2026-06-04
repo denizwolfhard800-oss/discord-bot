@@ -2070,5 +2070,96 @@
     "before": "online",
     "after": "offline",
     "timestamp": "2026-06-04T07:23:35.909716+00:00"
+  },
+  {
+    "member_id": 990730255272669236,
+    "member_name": "\u2605Sonia\u2605 he/him/any",
+    "before": "dnd",
+    "after": "offline",
+    "timestamp": "2026-06-04T07:31:38.207492+00:00"
+  },
+  {
+    "member_id": 990730255272669236,
+    "member_name": "\u2605Sonia\u2605 he/him/any",
+    "before": "offline",
+    "after": "dnd",
+    "timestamp": "2026-06-04T07:35:47.950513+00:00"
+  },
+  {
+    "member_id": 956532940639203399,
+    "member_name": "Alexein/bird/Robin",
+    "before": "offline",
+    "after": "dnd",
+    "timestamp": "2026-06-04T07:37:44.212018+00:00"
+  },
+  {
+    "member_id": 956532940639203399,
+    "member_name": "Alexein/bird/Robin",
+    "before": "dnd",
+    "after": "online",
+    "timestamp": "2026-06-04T07:37:46.764428+00:00"
+  },
+  {
+    "member_id": 956532940639203399,
+    "member_name": "Alexein/bird/Robin",
+    "before": "online",
+    "after": "dnd",
+    "timestamp": "2026-06-04T07:37:49.726326+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "offline",
+    "after": "dnd",
+    "timestamp": "2026-06-04T07:40:48.942081+00:00"
+  },
+  {
+    "member_id": 1078902292167803010,
+    "member_name": "\ud83d\udef8\u0fd0\u22b9",
+    "before": "offline",
+    "after": "idle",
+    "timestamp": "2026-06-04T07:42:04.957234+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "dnd",
+    "after": "online",
+    "timestamp": "2026-06-04T07:44:05.975969+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T07:44:23.482439+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-04T07:44:24.727530+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T07:44:25.101620+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "idle",
+    "after": "online",
+    "timestamp": "2026-06-04T07:44:25.832569+00:00"
+  },
+  {
+    "member_id": 922113149904252928,
+    "member_name": "Hikaru",
+    "before": "online",
+    "after": "idle",
+    "timestamp": "2026-06-04T07:44:27.696206+00:00"
   }
 ]
