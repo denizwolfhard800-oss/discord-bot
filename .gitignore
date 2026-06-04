@@ -47,3 +47,11 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Bot runtime data (auto-generated)
+bot/presence_history.json
+bot/config.json
